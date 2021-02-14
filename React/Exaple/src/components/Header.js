@@ -1,20 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-const HeaderList = styled.div`
-    border: 1px solid black;
-    height: 300px;
-`
-
+// 컴포넌트로 생성(재사용) : styld-components = > js파일과 css파일 관리
+const StyledHeaderDiv = styled.div`
+  border: 1px solid black;
+  height: 300px;
+`;
 const Header = () => {
-    return (
-        <HeaderList>
-            <ul>
-                <li>오시는길 : 서울 구로구 </li>
-                <li>전화번호</li>
-            </ul>
-        </HeaderList>
-    )
-}
+  return (
+    <StyledHeaderDiv>
+      <ul>
+        <li>오시는길 : 구로구</li>
+        <li>전화번호 : 010 - 9999 - 9999</li>
+      </ul>
+    </StyledHeaderDiv>
+  );
+};
 
-export default Header
+export default Header;

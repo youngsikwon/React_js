@@ -1,10 +1,10 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Login from './components/Login';
 import styled from 'styled-components';
-import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import { Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -15,7 +15,10 @@ const Title = styled.h1`
 function App() {
   return (
     <div>
-      <HomePage />
+      <Header />
+      <Route path="/" exact={true} component={HomePage} />
+      <Route path="/login" exact={true} component={LoginPage} />
+      <Footer />
     </div>
   );
 }

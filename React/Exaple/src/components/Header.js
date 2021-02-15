@@ -5,13 +5,14 @@ import styled from 'styled-components';
 const StyledHeaderDiv = styled.div`
   border: 1px solid black;
   height: 300px;
+  background-color: ${(props) => props.backgroundColor};
 `;
 const Header = () => {
   return (
-    <StyledHeaderDiv>
+    <StyledHeaderDiv backgroundColor={'blue'}>
       <ul>
-        <li>오시는길 : 구로구</li>
-        <li>전화번호 : 010 - 9999 - 9999</li>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
       </ul>
     </StyledHeaderDiv>
   );

@@ -1,13 +1,27 @@
 import React from 'react';
+import Styled from 'styled-components';
 
+const StyledDeleteButton = Styled.button`
+color:${(props) => (props.user.username === 'start' ? 'blue' : 'red')}
+`;
+
+//스타일 확장
+const StyledAddButton = Styled(StyledDeleteButton)`
+color:${(props) => (props.user.username === 'start' ? 'blue' : 'red')};
+  background-color: green;
+`;
+
+// 부모 -> 어떤 데이터를 스타일링
 const Home = (props) => {
   //구조분할 할당
-  const { boards, setBoards } = props;
+  const { boards, setBoards, user } = props;
 
   return (
     <div>
-      <h1>홈 : (number).</h1>
-      <button onClick={() => setBoards([])}>전체삭제</button>
+      <StyledAddButton user={user}>더하기</StyledAddButton>
+      <StyledDeleteButton user={user} onClick={() => setBoards([])}>
+        전체삭제
+      </StyledDeleteButton>
       {boards.map((boards) => (
         <h3>
           제목 : {boards.title} 내용 ㅣ {boards.content}

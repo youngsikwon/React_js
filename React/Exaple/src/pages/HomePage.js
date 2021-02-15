@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Home from '../home/Home';
 
 const HomePage = () => {
   //http 요청*fetch, axios()
   const [boards, setBoards] = useState([]);
-  const [number, setNumber] = useState(0);
+  const [user, setUser] = useState(0);
 
   //빈 배열 한번만 실행
   useEffect(() => {
@@ -19,15 +17,10 @@ const HomePage = () => {
 
     // 빈데이터
     setBoards([...data]);
+    setUser({ id: 1, username: 'start111' });
   }, []);
 
-  return (
-    <div>
-      <Header />
-      <Home boards={boards} setBoards={setBoards} />
-      <Footer />
-    </div>
-  );
+  return <Home boards={boards} setBoards={setBoards} user={user} />;
 };
 
 export default HomePage;

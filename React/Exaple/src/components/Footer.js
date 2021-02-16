@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <StyledFooterDiv>
       <ul>
-        <li>메뉴</li>
-        <li>메뉴2</li>
+        <li>오시는길 : 구로구</li>
+        <li>전화번호 : 010 - 9999 - 9999</li>
       </ul>
     </StyledFooterDiv>
   );

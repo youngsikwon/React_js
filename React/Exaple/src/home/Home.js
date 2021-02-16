@@ -1,4 +1,6 @@
+import { Button } from 'react-bootstrap';
 import React from 'react';
+
 import Styled from 'styled-components';
 
 const StyledDeleteButton = Styled.button`
@@ -18,6 +20,7 @@ const Home = (props) => {
 
   return (
     <div>
+      <Button variant="primary">primary</Button>{' '}
       <StyledAddButton user={user}>더하기</StyledAddButton>
       <StyledDeleteButton user={user} onClick={() => setBoards([])}>
         전체삭제

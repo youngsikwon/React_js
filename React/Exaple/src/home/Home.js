@@ -23,7 +23,7 @@ const Home = (props) => {
         전체삭제
       </StyledDeleteButton>
       {boards.map((boards) => (
-        <h3>
+        <h3 key={boards.id}>
           제목 : {boards.title} 내용 ㅣ {boards.content}
         </h3>
       ))}

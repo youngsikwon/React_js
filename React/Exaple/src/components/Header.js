@@ -1,20 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // 컴포넌트로 생성(재사용) : styld-components = > js파일과 css파일 관리
-const StyledHeaderDiv = styled.div`
+const StyledHeadButtonDiv = styled.div`
+  border: 1px solid black;
+  height: 300px;
+  background-color: ${(props) => props.backgroundColor};
+`;
+const StyledHeadLink = styled(Link)`
   border: 1px solid black;
   height: 300px;
   background-color: ${(props) => props.backgroundColor};
 `;
 const Header = () => {
   return (
-    <StyledHeaderDiv backgroundColor={'blue'}>
+    <StyledHeadButtonDiv backgroundColor={'blue'}>
       <ul>
-        <li>메뉴1</li>
-        <li>메뉴2</li>
+        <li>
+          <StyledHeadLink to="/">홈</StyledHeadLink>
+        </li>
+        <li>
+          <StyledHeadLink to="/login/10">로그인</StyledHeadLink>
+        </li>
       </ul>
-    </StyledHeaderDiv>
+    </StyledHeadButtonDiv>
   );
 };
 
